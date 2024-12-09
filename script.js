@@ -15,6 +15,8 @@ document.getElementById('countButton').addEventListener('click', async () => {
 
     try {
         while (hasMoreProducts) {
+            resultDiv.textContent = `Counting products... Page ${page}/Hidden`;
+
             const response = await fetch(`${storeUrl}/products.json?page=${page}`);
             if (!response.ok) throw new Error("Invalid store URL or network error.");
 
